@@ -60,6 +60,7 @@ int main(int argc, char* argv[])
 		printf("Ancillary Chunk\n");
 		printf("   ChunkOffset:0x%08x	\n",ChunkOffset);
 		printf("   ChunkLen: %10d		\n",ChunkLen);
+		ChunkOffset+=ChunkLen+12;
 		crc32=GetCrc32(buf,ChunkLen+4);
 		printf("   ExpectCRC32:%08X\n",crc32);
 		fread(buf,4,1,fp);
